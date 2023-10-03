@@ -1,0 +1,26 @@
+[
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\main.cpp"
+        ],
+        "dependencies": [],
+        "id": 1
+    },
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\product.cpp"
+        ],
+        "dependencies": [],
+        "id": 2
+    }
+]
