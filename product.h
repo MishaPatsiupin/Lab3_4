@@ -7,9 +7,9 @@
 
 #include <vector>
 #include <iostream>
+#include "task_time.h"
 
-
-class product {
+class product : public task_time{
 public:
     friend std::ostream &operator<<(std::ostream &ostream, const product &product);
 

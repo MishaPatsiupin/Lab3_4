@@ -1,6 +1,10 @@
 #include "task_time.h"
 
-
+/*    task_time task1;
+    task1.new_time();
+    std::thread t1(&task_time::countdown, &task1);
+    t1.detach();
+    */
 
 void task_time::new_time () {
     std::cout << "Enter the time to complete the task (sec): ";
