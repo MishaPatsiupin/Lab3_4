@@ -67,6 +67,54 @@ build CMakeFiles/Lab3.dir/task_time.cpp.obj: CXX_COMPILER__Lab3_unscanned_Debug 
   OBJECT_DIR = CMakeFiles\Lab3.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab3.dir
 
+build CMakeFiles/Lab3.dir/sting.cpp.obj: CXX_COMPILER__Lab3_unscanned_Debug D$:/OAiP_3/Lab3/sting.cpp || cmake_object_order_depends_target_Lab3
+  DEP_FILE = CMakeFiles\Lab3.dir\sting.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab3.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab3.dir
+
+build CMakeFiles/Lab3.dir/manager.cpp.obj: CXX_COMPILER__Lab3_unscanned_Debug D$:/OAiP_3/Lab3/manager.cpp || cmake_object_order_depends_target_Lab3
+  DEP_FILE = CMakeFiles\Lab3.dir\manager.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab3.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab3.dir
+
+build CMakeFiles/Lab3.dir/worker.cpp.obj: CXX_COMPILER__Lab3_unscanned_Debug D$:/OAiP_3/Lab3/worker.cpp || cmake_object_order_depends_target_Lab3
+  DEP_FILE = CMakeFiles\Lab3.dir\worker.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab3.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab3.dir
+
+build CMakeFiles/Lab3.dir/director.cpp.obj: CXX_COMPILER__Lab3_unscanned_Debug D$:/OAiP_3/Lab3/director.cpp || cmake_object_order_depends_target_Lab3
+  DEP_FILE = CMakeFiles\Lab3.dir\director.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab3.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab3.dir
+
+build CMakeFiles/Lab3.dir/tester.cpp.obj: CXX_COMPILER__Lab3_unscanned_Debug D$:/OAiP_3/Lab3/tester.cpp || cmake_object_order_depends_target_Lab3
+  DEP_FILE = CMakeFiles\Lab3.dir\tester.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab3.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab3.dir
+
+build CMakeFiles/Lab3.dir/developer.cpp.obj: CXX_COMPILER__Lab3_unscanned_Debug D$:/OAiP_3/Lab3/developer.cpp || cmake_object_order_depends_target_Lab3
+  DEP_FILE = CMakeFiles\Lab3.dir\developer.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab3.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab3.dir
+
+build CMakeFiles/Lab3.dir/administrator.cpp.obj: CXX_COMPILER__Lab3_unscanned_Debug D$:/OAiP_3/Lab3/administrator.cpp || cmake_object_order_depends_target_Lab3
+  DEP_FILE = CMakeFiles\Lab3.dir\administrator.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab3.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab3.dir
+
+build CMakeFiles/Lab3.dir/name.cpp.obj: CXX_COMPILER__Lab3_unscanned_Debug D$:/OAiP_3/Lab3/name.cpp || cmake_object_order_depends_target_Lab3
+  DEP_FILE = CMakeFiles\Lab3.dir\name.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab3.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab3.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Lab3
@@ -75,7 +123,7 @@ build CMakeFiles/Lab3.dir/task_time.cpp.obj: CXX_COMPILER__Lab3_unscanned_Debug 
 #############################################
 # Link the executable Lab3.exe
 
-build Lab3.exe: CXX_EXECUTABLE_LINKER__Lab3_Debug CMakeFiles/Lab3.dir/main.cpp.obj CMakeFiles/Lab3.dir/product.cpp.obj CMakeFiles/Lab3.dir/task_time.cpp.obj
+build Lab3.exe: CXX_EXECUTABLE_LINKER__Lab3_Debug CMakeFiles/Lab3.dir/main.cpp.obj CMakeFiles/Lab3.dir/product.cpp.obj CMakeFiles/Lab3.dir/task_time.cpp.obj CMakeFiles/Lab3.dir/sting.cpp.obj CMakeFiles/Lab3.dir/manager.cpp.obj CMakeFiles/Lab3.dir/worker.cpp.obj CMakeFiles/Lab3.dir/director.cpp.obj CMakeFiles/Lab3.dir/tester.cpp.obj CMakeFiles/Lab3.dir/developer.cpp.obj CMakeFiles/Lab3.dir/administrator.cpp.obj CMakeFiles/Lab3.dir/name.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Lab3.dir

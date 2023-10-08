@@ -3,7 +3,7 @@
 std::ostream &operator<<(std::ostream &ostream, const product &product) {
     ostream << "Product, ID: " << product.ID << "\n";
     ostream << "  Name: ";
-    for (char i: product.name) {
+    for (char i: product.name_product) {
         ostream << i;
     }
     if(product.quantity == -2){
@@ -36,4 +36,33 @@ std::ostream &operator<<(std::ostream &ostream, const product &product) {
         }
     }
     return ostream;
+}
+
+product product::create_product() {
+    product product;
+    product.ID = ID_inzilizete();
+    char input;
+
+    std::cout << "\nEnter the name_product product: ";
+    while (std::cin.get(input) && input != '\n')
+        product.name_product.push_back(input);
+
+    std::cout << "Enter quantity product: ";
+    std::cin >> product.quantity;
+
+    //выводим список разрабов, и просим выбрать нужного
+    product.developer = {'0'};
+
+    //выводим список менеджеров, и просим выбрать нужного
+    product.manager = {'0'};
+
+    std::cout << "Enter 1, to add primitives ->";
+    if(get_number(-10) == 1){
+        std::cout << "\nEnter the name_product product: ";
+        while (std::cin.get(input) && input != '\n')
+            product.primitives.push_back(input);
+    }
+
+
+    return product;
 }

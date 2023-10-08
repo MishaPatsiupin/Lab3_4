@@ -13,12 +13,6 @@ void task_time::new_time () {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-    char input;
-    std::cout << "Enter the task: ";
-    while (std::cin.get(input) && input != '\n') {
-        task.push_back(input);
-    }
-
     flag_work ++;
 }
 
