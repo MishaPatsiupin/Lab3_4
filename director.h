@@ -14,6 +14,7 @@ public:
 
     friend std::ostream &operator<<(std::ostream &ostream, const director &director);
     director create_director();
+    director first();
     ~director() {};
 };
 

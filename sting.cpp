@@ -42,9 +42,9 @@ int whot_you_wont (int i){
     int flag = -1;
 
     switch (i) {
-        case 0:{
-            std::cout << "\nEnter 0, to create new matrix" << std::endl;
-            std::cout << "Enter 1, to coppy matrix" << std::endl;
+        case 1:{
+            std::cout << "\nEnter 0, to fill data in by default" << std::endl;
+            std::cout << "Enter 1, to changes the director's information" << std::endl;
             flag = get_choize(0, 1);
             break;
         }
@@ -59,5 +59,28 @@ id_chet++;
     return id_chet;
 }
 
+int menu(){
+    int choize = -1;
+    std::cout << "\n----------MENU--------" << std::endl;
+    std::cout << "Enter 1, to go to director" << std::endl;
 
+    std::cout << "Enter 2, to view the matrix(s)" << std::endl;
+    std::cout << "Enter 3, to view or minimize an arbitrary matrix element" << std::endl; //+строка, толбец
+    std::cout << "Enter 4, for transposing a matrix" << std::endl;
 
+/*Перегрузить операторы +, -, *, +=, -=, *=, =, операторы сравнения, new и delete.*/
+    std::cout << "Enter 5, for addition of matrices +" << std::endl;
+    std::cout << "Enter 6, for subtraction of matrices -" << std::endl;
+    std::cout << "Enter 7, for increase by N(-10<=N<=10) each element of the matrix +=" << std::endl;
+    std::cout << "Enter 8, for decrease by N(-10<=N<=10) each element of the matrix -=" << std::endl;
+    std::cout << "Enter 9, for multiplying a matrix by a number *=" << std::endl;
+    std::cout << "Enter 10, for Matrix comparisons on the first element </>" << std::endl;
+
+    std::cout << "Enter 0, for exit program\n" << std::endl;
+    choize = get_choize(0, 10);
+    return choize;
+}
+
+director change_directir () {
+
+}

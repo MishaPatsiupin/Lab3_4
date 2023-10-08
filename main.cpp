@@ -35,16 +35,43 @@ ID экземпляра.
 
 int main() {
 
-    {
-        std::vector<product> product_vec;
+
+      /*  std::vector<product> product_vec;
         std::vector<task_time> task_time_vec;
 
         std::vector<tester> tester_vec;
         std::vector<manager> manager_vec;
         std::vector<developer> developer_vec;
-        std::vector<administrator> administrator_vec;
-        std::vector<director> director_vec;
+        std::vector<administrator> administrator_vec;*/
+        director director_one;
+        director_one = director_one.first();
+
+std::cout << director_one;
+    /*int choize_menu = 0, flag = 0;
+    while (true) {
+        choize_menu = menu();
+
+        switch (choize_menu) {
+            case 0: {
+                return 0;
+                break;
+            }
+            case 1: {//director
+                if (flag == -1)
+                if (whot_you_wont(1) == 0) {
+
+                } else {
+
+                }
+                break;
+            }
+        }
+
+
     }
+
+
+
 
 /*
     manager_vec.emplace_back();
@@ -60,7 +87,7 @@ int main() {
     std::cout << "Okey.";
 
 
-
-    getchar();getchar();
+    getchar();
+    getchar();
     return 0;
 }
