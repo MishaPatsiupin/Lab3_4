@@ -15,7 +15,7 @@ public:
     ~manager() {};
 
     manager create_manager();
-
+    manager first_manager();
 
 };
 

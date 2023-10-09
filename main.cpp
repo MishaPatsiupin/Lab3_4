@@ -36,18 +36,32 @@ ID экземпляра.
 int main() {
 
 
-      /*  std::vector<product> product_vec;
-        std::vector<task_time> task_time_vec;
+    std::vector<product> product_vec;
+    product_vec.emplace_back();
+    product_vec[0] = product_vec[0].first_product();
+    std::vector<task_time> task_time_vec;
 
-        std::vector<tester> tester_vec;
-        std::vector<manager> manager_vec;
-        std::vector<developer> developer_vec;
-        std::vector<administrator> administrator_vec;*/
-        director director_one;
-        director_one = director_one.first();
+    std::vector<administrator> administrator_vec;
+    administrator_vec.emplace_back();
+    administrator_vec[0] = administrator_vec[0].first_administrator();
 
-std::cout << director_one;
-    /*int choize_menu = 0, flag = 0;
+    std::vector<developer> developer_vec;
+    developer_vec.emplace_back();
+    developer_vec[0] = developer_vec[0].first_developer();
+
+    std::vector<manager> manager_vec;
+    manager_vec.emplace_back();
+    manager_vec[0] = manager_vec[0].first_manager();
+
+    std::vector<tester> tester_vec;
+
+
+
+    director director_one;
+    director_one = director_one.first();
+
+    std::cout << director_one;
+    int choize_menu = -1, flag = 0;
     while (true) {
         choize_menu = menu();
 
@@ -57,12 +71,39 @@ std::cout << director_one;
                 break;
             }
             case 1: {//director
-                if (flag == -1)
-                if (whot_you_wont(1) == 0) {
+                std::cout << director_one;
+                switch (whot_you_wont(2)) {
+                    case 0: {
+                        change_name(director_one);
+                        break;
+                    }
+                    case 1: {
+                        chacge_product(product_vec);
+                        break;
+                    }
+                    case 2: {
+                        view_administrator(administrator_vec);
+                        break;
+                    }
+                    case 3: {//view developer's
+                        view_developer(developer_vec);
+                        break;
+                    }
+                    case 4: {//view manager's
+                        view_manager(manager_vec);
+                        break;
+                    }
+                    case 5: {//view tester's
 
-                } else {
+                        break;
+                    }
+                    case 6: {//back
 
+                        break;
+                    }
                 }
+
+
                 break;
             }
         }
@@ -71,17 +112,13 @@ std::cout << director_one;
     }
 
 
-
-
-/*
     manager_vec.emplace_back();
     manager_vec.emplace_back();
     manager_vec[0].name_name = {'M', 'a', 'n', 'a', 'g', 'e', 'r', ' ', '1'};
-   manager_vec[1].name_name = {'M', 'a', 'n', 'a', 'g', 'e', 'r', ' ', '2'};
+    manager_vec[1].name_name = {'M', 'a', 'n', 'a', 'g', 'e', 'r', ' ', '2'};
 
 
     std::cout << product_vec[0];
-*/
 
 
     std::cout << "Okey.";
