@@ -1,20 +1,3 @@
-/*использовать наследование
-ID экземпляра.
-Предусмотреть автоматическое и корректное заполнение полей класса
-данными.
-
--Сотрудник, читать
--Тестировщик, примечания
--Менеджер,  создание, участвует
--Разработчик, создание, участвует
--Администратор, изменение статуса производства, ставить задачи на выполнение
--Директор добавление предыдущих классов
-
-Добавить также список с информацией о производимых/произведенных товарах. Внутри должна храниться
-информация о разработчике и менеджере. Добавить возможность изменять статус товара (в
-разработке, производится, есть на складе, нет в наличии) администраторам. Также добавить
-возможность ставить задачи на выполнение (по истечению времени задача считается
-выполненной и соответственно, изменяется статус).*/
 
 #include "worker.h"
 #include "tester.h"
@@ -54,77 +37,179 @@ int main() {
     manager_vec[0] = manager_vec[0].first_manager();
 
     std::vector<tester> tester_vec;
+    tester_vec.emplace_back();
+    tester_vec[0] = tester_vec[0].first_tester();
 
-
+    std::vector<worker> worker_vec;
+    worker_vec.emplace_back();
+    worker_vec[0] = worker_vec[0].first_worker();
 
     director director_one;
     director_one = director_one.first();
 
-    std::cout << director_one;
-    int choize_menu = -1, flag = 0;
+    std::vector<task_time> task_vector;
+
+
+    int choize_menu = -1;
     while (true) {
         choize_menu = menu();
-
         switch (choize_menu) {
             case 0: {
                 return 0;
                 break;
             }
-            case 1: {//director
+            case 1: {
                 std::cout << director_one;
                 switch (whot_you_wont(2)) {
                     case 0: {
-                        change_name(director_one);
                         break;
                     }
                     case 1: {
-                        chacge_product(product_vec);
+                        change_name(director_one);
                         break;
                     }
                     case 2: {
+                        chacge_product(product_vec);
+                        break;
+                    }
+                    case 3: {
                         view_administrator(administrator_vec);
                         break;
                     }
-                    case 3: {//view developer's
+                    case 4: {
                         view_developer(developer_vec);
                         break;
                     }
-                    case 4: {//view manager's
+                    case 5: {
                         view_manager(manager_vec);
                         break;
                     }
-                    case 5: {//view tester's
-
+                    case 6: {
+                        view_tester(tester_vec);
                         break;
                     }
-                    case 6: {//back
+                }
 
+                break;
+            }
+            case 2: {//Администратор, изменение статуса производства, ставить задачи на выполнение
+                for (size_t i = 0; i < administrator_vec.size(); i++) {
+                    std::cout << "\n(" << i + 1 << ") " << administrator_vec[i] << std::endl;
+                }
+                switch (whot_you_wont(5)) {
+                    case 0: {
                         break;
                     }
+                    case 1: {
+                        view_administrator(administrator_vec);
+                        break;
+                    }
+                    case 2: {
+                        chacge_product(product_vec);
+                        break;
+                    }
+                    case 3: {
+                        task_time task1;
+                        task1 = task1.create_task();
+                        task_vector.push_back(task1);
+                        break;
+                    }
+                }
+                break;
+            }
+            case 3: {
+                for (size_t i = 0; i < manager_vec.size(); i++) {
+                    std::cout << "\n(" << i + 1 << ") " << manager_vec[i];
+                }
+
+                switch (whot_you_wont(6)) {
+                    case 0:{
+                        break;
+                    }
+                    case 1: {
+                        view_manager(manager_vec);
+                        break;
+                    }
+                    case 2: {
+                        chacge_product(product_vec);
+                        break;
+                    }
+                    case 3: {
+                        task_time task1;
+                        task1 = task1.create_task();
+                        task_vector.push_back(task1);
+                        break;
+                    }
+                }
+                break;
+            }
+            case 4: {//-Разработчик, создание, участвует
+                for (size_t i = 0; i < developer_vec.size(); i++) {
+                    std::cout << "\n(" << i + 1 << ") " << developer_vec[i] << std::endl;
+                }
+
+                switch (whot_you_wont(7)) {
+                    case 0:{
+                        break;
+                    }
+                    case 1: {
+                        view_developer(developer_vec);
+                        break;
+                    }
+                    case 2: {
+                        chacge_product(product_vec);
+                        break;
+                    }
+                    case 3: {
+                        task_time task1;
+                        task1 = task1.create_task();
+                        task_vector.push_back(task1);
+                        break;
+                    }
+                }
+                break;
+            }
+            case 5: {//Тестировщик, примечания
+                switch (whot_you_wont(8)) {
+                    case 0:{
+                        break;
+                    }
+                    case 1: {
+                        for (size_t i = 0; i < tester_vec.size(); i++) {
+                            std::cout << "\n(" << i + 1 << ") " << tester_vec[i] << std::endl;
+                        }
+                        break;
+                    }
+                    case 2: {
+                        tester_product(product_vec);
+                        break;
+                    }
+                    case 3: {
+                        print_task(task_vector);
+                        break;
+                    }
+                    case 4: {
+                        break;
+                    }
+                }
+                break;
+            }
+            case 6:{
+                switch (whot_you_wont(11)) {
+
+
                 }
 
 
                 break;
             }
         }
-
-
     }
 
 
-    manager_vec.emplace_back();
-    manager_vec.emplace_back();
-    manager_vec[0].name_name = {'M', 'a', 'n', 'a', 'g', 'e', 'r', ' ', '1'};
-    manager_vec[1].name_name = {'M', 'a', 'n', 'a', 'g', 'e', 'r', ' ', '2'};
-
-
-    std::cout << product_vec[0];
-
-
-    std::cout << "Okey.";
-
+    getchar();
 
     getchar();
-    getchar();
+
     return 0;
 }

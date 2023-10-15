@@ -6,7 +6,7 @@ std::ostream &operator<<(std::ostream &ostream, const developer &developer) {
     for (char i: developer.name_name) {
         ostream << i;
     }
-
+ostream << std::endl;
     return ostream;
 }
 

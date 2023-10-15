@@ -12,6 +12,7 @@ public:
 
     friend std::ostream &operator<<(std::ostream &ostream, const worker &worker);
 
+    worker first_worker();
     worker create_worker();
     ~worker() {};
 };

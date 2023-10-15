@@ -8,6 +8,7 @@ worker worker::create_worker() {
     char input;
 
     std::cout << "\nEnter the name worker: ";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     while (std::cin.get(input) && input != '\n')
         worker.name_name.push_back(input);
 
@@ -24,4 +25,10 @@ std::ostream &operator<<(std::ostream &ostream, const worker &worker) {
     return ostream;
 }
 
+worker worker::first_worker() {
 
+    worker worker;
+    worker.ID = ID_inzilizete();
+    name_name = {'W', 'o', 'r', 'k', 'e', 'r', '1'};
+    return worker;
+}

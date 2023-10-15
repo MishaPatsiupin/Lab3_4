@@ -24,11 +24,11 @@ manager manager::first_manager() {
 
 std::ostream &operator<<(std::ostream &ostream, const manager &manager) {
     ostream << "Manager, ID: " << manager.ID << "\n";
-    ostream << "  Name: ";
+    ostream << "  Name: " << std::endl;
     for (char i: manager.name_name) {
         ostream << i;
     }
-
+    ostream << std::endl;
     return ostream;
 }
 

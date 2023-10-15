@@ -3,11 +3,15 @@
 #include "name.h"
 #include <iostream>
 #include <vector>
+#include "task_time.h"
 #include "product.h"
 #include "director.h"
 #include "administrator.h"
 #include "developer.h"
 #include "manager.h"
+#include "tester.h"
+#include "worker.h"
+#include <thread>
 
 
 extern int id_chet;
@@ -16,12 +20,18 @@ class product;
 class administrator;
 class developer;
 class manager;
+class tester;
+class worker;
+class task_time;
 
 int ID_inzilizete();
 int get_number(int min);
 int get_choize(int min, int max);
 int whot_you_wont (int i);
 int menu();
+
+void print_task(const std::vector<task_time>& task_vector);
+
 
 void change_name (name &obj);
 
@@ -35,7 +45,9 @@ void view_administrator(std::vector<administrator> &administrators);
 
 void view_developer(std::vector<developer> &developers);
 
-void view_manager(std::vector<manager> managers);
+void view_manager(std::vector<manager> &managers);
 
+void view_tester(std::vector<tester> &testers);
+void tester_product(std::vector<product> &testers);
 
 #endif //LAB3_STING_H
