@@ -23,11 +23,8 @@ administrator administrator::first_administrator(){
 }
 
 std::ostream &operator<<(std::ostream &ostream, const administrator &administrator) {
-    ostream << "\n  Administrator, ID: " << administrator.ID << "\n";
-    ostream << "  Name: ";
-    for (char i: administrator.name_name) {
-        ostream << i;
-    }
+    ostream << "\nAdministrator, ";
+    administrator.print_name_id();
 
     return ostream;
 }

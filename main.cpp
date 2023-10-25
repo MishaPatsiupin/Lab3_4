@@ -15,14 +15,29 @@
 #include <iostream>
 #include <vector>
 
+/*
+Класс сотрудника сделать абстрактным.
+
+В нем прописать интерфейсы, необходимые для реализации функции в наследуемых классах.
+Например, есть задачи на исполнение. Дать возможность Администратору давать задачи для остальных классов,
+а остальным перегрузить функции выполнения задач (желательно использовать уникальный вывод в консоль для
+определения класса, выполняющего задачу)
+ */
 
 int main() {
 
+    std::vector<name> name_vec;
 
-    std::vector<product> product_vec;
+    for (int i = 0; i < 30; i++){
+        name_vec.emplace_back();
+        name_vec[i].ID = name_vec[i].ID_inzilizete();
+        name_vec[i].name_name = {'i'};
+        std::cout << name_vec[i];
+    }
+
+   /* std::vector<product> product_vec;
     product_vec.emplace_back();
     product_vec[0] = product_vec[0].first_product();
-    std::vector<task_time> task_time_vec;
 
     std::vector<administrator> administrator_vec;
     administrator_vec.emplace_back();
@@ -47,8 +62,8 @@ int main() {
     director director_one;
     director_one = director_one.first();
 
-    std::vector<task_time> task_vector;
-
+    std::vector<std::shared_ptr<task_time>> task_vector;
+//    std::vector<task_time> task_time_vec;
 
     int choize_menu = -1;
     while (true) {
@@ -88,6 +103,10 @@ int main() {
                         view_tester(tester_vec);
                         break;
                     }
+                    case 7: {
+                        view_worker(worker_vec);
+                        break;
+                    }
                 }
 
                 break;
@@ -109,8 +128,7 @@ int main() {
                         break;
                     }
                     case 3: {
-                        task_time task1;
-                        task1 = task1.create_task();
+                        std::shared_ptr<task_time> task1 = task_time::create_task();
                         task_vector.push_back(task1);
                         break;
                     }
@@ -135,8 +153,7 @@ int main() {
                         break;
                     }
                     case 3: {
-                        task_time task1;
-                        task1 = task1.create_task();
+                        std::shared_ptr<task_time> task1 = task_time::create_task();
                         task_vector.push_back(task1);
                         break;
                     }
@@ -161,8 +178,7 @@ int main() {
                         break;
                     }
                     case 3: {
-                        task_time task1;
-                        task1 = task1.create_task();
+                        std::shared_ptr<task_time> task1 = task_time::create_task();
                         task_vector.push_back(task1);
                         break;
                     }
@@ -196,20 +212,36 @@ int main() {
             }
             case 6:{
                 switch (whot_you_wont(11)) {
-
-
+                    case 0: {
+                        break;
+                    }
+                    case 1: {
+                        for (size_t i = 0; i < worker_vec.size(); i++) {
+                            std::cout << "\n(" << i + 1 << ") " << worker_vec[i] << std::endl;
+                        }
+                        break;
+                    }
+                    case 2: {
+                        for (size_t i = 0; i < product_vec.size(); i++) {
+                            std::cout << "\n(" << i + 1 << ") " << product_vec[i] << std::endl;
+                        }
+                        break;
+                    }
+                    case 3: {
+                        print_task(task_vector);
+                        break;
+                    }
+                    case 4: {
+                        break;
+                    }
                 }
-
-
                 break;
             }
         }
     }
 
-
+    */
     getchar();
-
     getchar();
-
     return 0;
 }

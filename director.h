@@ -8,7 +8,7 @@
 
 int ID_inzilizete();
 
-class director : public name{
+class director : public name {
 public:
 
 

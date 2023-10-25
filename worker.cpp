@@ -16,12 +16,8 @@ worker worker::create_worker() {
 }
 
 std::ostream &operator<<(std::ostream &ostream, const worker &worker) {
-    ostream << "Worker, ID: " << worker.ID << "\n";
-    ostream << "  Name: ";
-    for (char i: worker.name_name) {
-        ostream << i;
-    }
-
+    ostream << "\nWorker, ";
+    worker.print_name_id();
     return ostream;
 }
 
@@ -29,6 +25,6 @@ worker worker::first_worker() {
 
     worker worker;
     worker.ID = ID_inzilizete();
-    name_name = {'W', 'o', 'r', 'k', 'e', 'r', '1'};
+    worker.name_name = {'W', 'o', 'r', 'k', 'e', 'r', '1'};
     return worker;
 }

@@ -6,18 +6,18 @@
 #include <chrono>
 #include <string>
 #include <windows.h>
-#include <limits>
 
 
 class task_time {
 public:
     int time;
     std::string task;
-int flag_work = 0;
+    int flag_work;
 
-    static std::shared_ptr<task_time> create_task();
+    task_time(); // Конструктор по умолчанию
     void new_time();
     void countdown();
+    static std::shared_ptr<task_time> create_task();
 };
 
 

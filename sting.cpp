@@ -2,11 +2,15 @@
 #include "manager.h"
 #include "administrator.h"
 
-void print_task(const std::vector<task_time>& task_vector) {
-    for (const task_time& task : task_vector) {
-        std::cout << "Task: " << task.task << ", Time: " << task.time << ", Work Flag: " << task.flag_work << std::endl;
+void print_task(const std::vector<std::shared_ptr<task_time>>& task_vector) {
+    for (const auto& task : task_vector) {
+        std::cout << "Task: " << task->task << ", Time: " << task->time;
+        if(task->flag_work == 0){
+            std::cout << ", Task complete " << std::endl;;
+        }else std::cout << ", Task in process" << std::endl;;
     }
 }
+
 
 int id_chet = 0;
 
@@ -61,6 +65,7 @@ int whot_you_wont(int i) {
             break;
         }
         case 2: {
+            std::cout <<"\n----------DIRECTOR----------";
             std::cout << "\nEnter 0, back" << std::endl;
             std::cout << "Enter 1, to changes director's information" << std::endl;
             std::cout << "Enter 2, to view product" << std::endl;
@@ -68,8 +73,9 @@ int whot_you_wont(int i) {
             std::cout << "Enter 4, to view developer's" << std::endl;
             std::cout << "Enter 5, to view manager's" << std::endl;
             std::cout << "Enter 6, to view tester's" << std::endl;
+            std::cout << "Enter 7, to view worker's" << std::endl;
 
-            flag = get_choize(0, 6);
+            flag = get_choize(0, 7);
             break;
         }
         case 3: {
@@ -81,13 +87,14 @@ int whot_you_wont(int i) {
         case 4: {
             std::cout << "\nEnter the -2, if product in development" << std::endl;
             std::cout << "Enter the -1, if product is in production" << std::endl;
-            std::cout << "Enter the 0, if product  out of Stock" << std::endl;
-            std::cout << "Enter the product quantity" << std::endl;
+            std::cout << "Enter quantity, if product  out of Stock" << std::endl;
+      //      std::cout << "Enter the product quantity" << std::endl;
 
             flag = get_number(-2);
             break;
         }
         case 5: {
+            std::cout <<"\n----------ADMINISTRATOR'S----------";
             std::cout << "\nEnter 0, back" << std::endl;
             std::cout << "Enter 1, to change administrator's" << std::endl;
             std::cout << "Enter 2, to change product's" << std::endl;
@@ -97,6 +104,7 @@ int whot_you_wont(int i) {
             break;
         }
         case 6: {
+            std::cout <<"\n----------MANAGER'S----------";
             std::cout << "\nEnter 0, back" << std::endl;
             std::cout << "Enter 1, to change manager's" << std::endl;
             std::cout << "Enter 2, to change product's" << std::endl;
@@ -106,6 +114,7 @@ int whot_you_wont(int i) {
             break;
         }
         case 7: {
+            std::cout <<"\n----------DEVELOPER'S----------";
             std::cout << "\nEnter 0, back" << std::endl;
             std::cout << "Enter 1, to change developer's" << std::endl;
             std::cout << "Enter 2, to change product's" << std::endl;
@@ -115,6 +124,7 @@ int whot_you_wont(int i) {
             break;
         }
         case 8: {
+            std::cout <<"\n----------TESTER'S----------";
             std::cout << "\nEnter 0, back" << std::endl;
             std::cout << "Enter 1, to view tester's" << std::endl;
             std::cout << "Enter 2, to view product's" << std::endl;
@@ -130,7 +140,7 @@ int whot_you_wont(int i) {
             flag = get_choize(0, 1);
             break;
         }
-        case 10: {
+        case 10: {//-
             std::cout << "\nEnter 0, back" << std::endl;
             std::cout << "Enter 1, to view tester's" << std::endl;
 
@@ -138,10 +148,13 @@ int whot_you_wont(int i) {
             break;
         }
         case 11: {
+            std::cout <<"\n----------WORKER'S----------";
             std::cout << "\nEnter 0, back" << std::endl;
             std::cout << "Enter 1, to view worker's" << std::endl;
+            std::cout << "Enter 2, to view product's" << std::endl;
+            std::cout << "Enter 3, to view all task" << std::endl;
 
-            flag = get_choize(0, 1);
+            flag = get_choize(0, 3);
             break;
         }
 
@@ -284,7 +297,7 @@ void change_product_developer(product &obj) {
     while (std::cin.get(input) && input != '\n') {
         obj.developer.push_back(input);
     }
-    std::cout << "Ok. New information:\n" << obj;
+    //std::cout << "Ok. New information:\n" << obj;
 }
 
 void change_product_manager(product &obj) {
@@ -295,7 +308,7 @@ void change_product_manager(product &obj) {
     while (std::cin.get(input) && input != '\n') {
         obj.manager.push_back(input);
     }
-    std::cout << "Ok. New information:\n" << obj;
+   // std::cout << "Ok. New information:\n" << obj;
 }
 
 void add_product_primitives(product &obj) {
@@ -394,20 +407,62 @@ void view_tester(std::vector<tester> &testers) {
         if (temp_choize == 1) {
             change_name(testers[temp_element]);
         }
+        if (temp_choize == 2) {
+            if (temp_element < testers.size()) {
+                testers.erase(testers.begin() + temp_element);
+            }
 
+        }
+        if (temp_choize == 3) {
+            tester new_tester;
+            new_tester = new_tester.create_tester();
+            testers.push_back(new_tester);
+        }
 
     }
 }
 
+void view_worker(std::vector<worker> &workers) {
+    while (true) {
+        for (size_t i = 0; i < workers.size(); i++) {
+            std::cout << "\n(" << i + 1 << ") " << workers[i] << std::endl;
+        }
 
+        int temp_choize = whot_you_wont(1);
+        if (temp_choize == 0) {
+            return;
+        }
+
+        int temp_element;
+        if (temp_choize != 3) {
+            temp_element = whot_you_wont(3);
+        }
+
+        if (temp_choize == 1) {
+            change_name(workers[temp_element]);
+        }
+        if (temp_choize == 2) {
+            if (temp_element < workers.size()) {
+                workers.erase(workers.begin() + temp_element);
+            }
+
+        }
+        if (temp_choize == 3) {
+            worker new_worker;
+            new_worker = new_worker.create_worker();
+            workers.push_back(new_worker);
+        }
+    }
+}
+/*
 int ID_inzilizete() {
     id_chet++;
     return id_chet;
 }
-
+*/
 int menu() {
     int choize = -1;
-    std::cout << "\n----------MENU--------" << std::endl;
+    std::cout << "\n==============MENU==============" << std::endl;
     std::cout << "Enter 0, exit" << std::endl;
     std::cout << "Enter 1, to go to director" << std::endl;
     std::cout << "Enter 2, to go to administrator's" << std::endl;

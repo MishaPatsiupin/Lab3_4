@@ -8,8 +8,9 @@
 
 int ID_inzilizete();
 
-class product : public name, public task_time{
+class product : public  name, public task_time{
 public:
+
     friend std::ostream &operator<<(std::ostream &ostream, const product &product);
     product create_product ();
     product first_product ();

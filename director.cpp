@@ -16,12 +16,8 @@ director director::create_director() {
 }
 
 std::ostream &operator<<(std::ostream &ostream, const director &director) {
-    ostream << " \n  Director, ID: " << director.ID << "\n";
-    ostream << "  Name: ";
-    for (char i: director.name_name) {
-        ostream << i;
-    }
-ostream << "\n";
+    ostream << "\nDirector, ";
+    director.print_name_id();
     return ostream;
 }
 

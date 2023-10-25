@@ -9,7 +9,6 @@ int ID_inzilizete();
 class worker : public name{
 public:
 
-
     friend std::ostream &operator<<(std::ostream &ostream, const worker &worker);
 
     worker first_worker();

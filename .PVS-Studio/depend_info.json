@@ -18,9 +18,117 @@
             "-std=gnu++23",
             "-fdiagnostics-color=always",
             "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\sting.cpp"
+        ],
+        "dependencies": [],
+        "id": 8
+    },
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\manager.cpp"
+        ],
+        "dependencies": [],
+        "id": 6
+    },
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\name.cpp"
+        ],
+        "dependencies": [],
+        "id": 7
+    },
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
             "D:\\OAiP_3\\Lab3\\product.cpp"
         ],
         "dependencies": [],
         "id": 2
+    },
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\administrator.cpp"
+        ],
+        "dependencies": [],
+        "id": 3
+    },
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\developer.cpp"
+        ],
+        "dependencies": [],
+        "id": 4
+    },
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\director.cpp"
+        ],
+        "dependencies": [],
+        "id": 5
+    },
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\task_time.cpp"
+        ],
+        "dependencies": [],
+        "id": 9
+    },
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\tester.cpp"
+        ],
+        "dependencies": [],
+        "id": 10
+    },
+    {
+        "arguments": [
+            "C:\\CLion 2023.2.1\\bin\\mingw\\bin\\g++.exe",
+            "-g",
+            "-std=gnu++23",
+            "-fdiagnostics-color=always",
+            "-DPVS_STUDIO",
+            "D:\\OAiP_3\\Lab3\\worker.cpp"
+        ],
+        "dependencies": [],
+        "id": 11
     }
 ]

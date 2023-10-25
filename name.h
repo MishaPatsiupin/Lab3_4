@@ -4,11 +4,16 @@
 #include <vector>
 
 class name {
+protected:
+    static int next_id;
 public:
     std::vector<char> name_name;
     int ID;
 
+    virtual void print_name_id() const;
+virtual int ID_inzilizete() const;
     friend std::ostream &operator<<(std::ostream &ostream, const name &name);
+
 };
 
 

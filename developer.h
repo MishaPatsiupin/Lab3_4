@@ -6,9 +6,8 @@
 
 int ID_inzilizete();
 
-class developer : public name{
+class developer : public name {
 public:
-
     friend std::ostream &operator<<(std::ostream &ostream, const developer &developer);
     developer create_developer();
     developer first_developer();

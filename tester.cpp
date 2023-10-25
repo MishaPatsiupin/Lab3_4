@@ -2,12 +2,8 @@
 
 std::ostream &operator<<(std::ostream &ostream, const tester &tester) {
 
-    ostream << "Tester, ID: " << tester.ID << "\n";
-    ostream << "  Name: ";
-    for (char i: tester.name_name) {
-        ostream << i;
-    }
-
+    ostream << "\nTester, ";
+    tester.print_name_id();
     return ostream;
 }
 
