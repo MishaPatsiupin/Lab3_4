@@ -2,17 +2,19 @@
 #define LAB3_TESTER_H
 
 #include <vector>
-#include "sting.h"
 #include "name.h"
-int ID_inzilizete();
+
 
 class tester : public name{
+private:
+    static int next_id;
 public:
 
     friend std::ostream &operator<<(std::ostream &ostream, const tester &tester);
     tester create_tester ();
     tester first_tester ();
     ~tester() {};
+    int ID_inzilizete() const override;
 };
 
 

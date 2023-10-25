@@ -3,19 +3,18 @@
 
 #include <iostream>
 #include <vector>
-#include "sting.h"
 #include "name.h"
 
-int ID_inzilizete();
 
 class director : public name {
+private:
+    static int next_id;
 public:
-
-
     friend std::ostream &operator<<(std::ostream &ostream, const director &director);
     director create_director();
     director first();
     ~director() {};
+    int ID_inzilizete() const override;
 };
 
 

@@ -2,17 +2,19 @@
 #define LAB3_ADMINISTRATOR_H
 #include <iostream>
 #include <vector>
-#include "sting.h"
 #include "name.h"
+#include <limits>
 
-int ID_inzilizete();
 
 class administrator : public name{
+private:
+    static int next_id;
 public:
     friend std::ostream &operator<<(std::ostream &ostream, const administrator &administrator);
     administrator create_administrator();
     administrator first_administrator();
- //   ~administrator() = default;
+    //   ~administrator() = default;
+   int ID_inzilizete() const override;
 };
 
 

@@ -1,5 +1,5 @@
 #include "worker.h"
-
+#include <thread>
 
 worker worker::create_worker() {
 
@@ -27,4 +27,20 @@ worker worker::first_worker() {
     worker.ID = ID_inzilizete();
     worker.name_name = {'W', 'o', 'r', 'k', 'e', 'r', '1'};
     return worker;
+}
+int worker::next_id = 0;
+int worker::ID_inzilizete() const {
+    next_id++;
+    int next = next_id;
+    int count = 0;
+    while (next != 0){
+        next = next /=10;
+        count++;
+    }
+    next = 1;
+    while (count != 0){
+        next *= 10;
+        count--;
+    }
+    return next_id + (next * 8);
 }

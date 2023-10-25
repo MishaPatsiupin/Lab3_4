@@ -2,11 +2,13 @@
 #define LAB3_WORKER_H
 
 #include <vector>
-#include "sting.h"
+
 #include "name.h"
-int ID_inzilizete();
+
 
 class worker : public name{
+private:
+    static int next_id;
 public:
 
     friend std::ostream &operator<<(std::ostream &ostream, const worker &worker);
@@ -14,6 +16,7 @@ public:
     worker first_worker();
     worker create_worker();
     ~worker() {};
+    int ID_inzilizete() const override;
 };
 
 

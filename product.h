@@ -2,13 +2,15 @@
 #define LAB3_PRODUCT_H
 
 #include <vector>
-#include "sting.h"
+
 #include "task_time.h"
 #include "name.h"
 
-int ID_inzilizete();
+
 
 class product : public  name, public task_time{
+private:
+    static int next_id;
 public:
 
     friend std::ostream &operator<<(std::ostream &ostream, const product &product);
@@ -21,6 +23,8 @@ public:
     std::vector<char> developer;
     std::vector<char> manager;
     std::vector<char> primitives;
+
+    int ID_inzilizete() const override;
 };
 
 

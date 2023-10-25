@@ -26,16 +26,9 @@
 
 int main() {
 
-    std::vector<name> name_vec;
 
-    for (int i = 0; i < 30; i++){
-        name_vec.emplace_back();
-        name_vec[i].ID = name_vec[i].ID_inzilizete();
-        name_vec[i].name_name = {'i'};
-        std::cout << name_vec[i];
-    }
 
-   /* std::vector<product> product_vec;
+    std::vector<product> product_vec;
     product_vec.emplace_back();
     product_vec[0] = product_vec[0].first_product();
 
@@ -240,7 +233,7 @@ int main() {
         }
     }
 
-    */
+
     getchar();
     getchar();
     return 0;

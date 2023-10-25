@@ -28,6 +28,23 @@ first.ID = ID_inzilizete();
     return first;
 }
 
+int director::next_id = 0;
+int director::ID_inzilizete() const {
+    next_id++;
+    int next = next_id;
+    int count = 0;
+    while (next != 0){
+        next = next /=10;
+        count++;
+    }
+    next = 1;
+    while (count != 0){
+        next *= 10;
+        count--;
+    }
+    return next_id + (next * 4);
+}
+
 
 
 

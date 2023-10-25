@@ -1,4 +1,5 @@
 #include "product.h"
+#include "sting.h"
 
 std::ostream &operator<<(std::ostream &ostream, const product &product) {
     ostream << "\n  Product, ID: " << product.ID << "\n";
@@ -87,5 +88,22 @@ product.quantity = 7;
     product.developer = {'L', 'y', 'k', 'a', 'n', 'o', 'v', 'a', ' ', 'I', '.', 'V', '.'};
     product.manager = {'N', 'i', 'k', ' ', 'B', '.', 'V', '.'};
     return product;
+}
+
+int product::next_id = 0;
+int product::ID_inzilizete() const {
+    next_id++;
+    int next = next_id;
+    int count = 0;
+    while (next != 0){
+        next = next /=10;
+        count++;
+    }
+    next = 1;
+    while (count != 0){
+        next *= 10;
+        count--;
+    }
+    return next_id + (next * 6);
 }
 
